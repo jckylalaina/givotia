@@ -4,6 +4,9 @@ import logo from '../public/img/logo-full.png'
 
 export default function Home() {
   
+const myLoader = ({ src, width, quality }) => {
+  return `https://jackylalaina.ml/${src}?w=${width}&q=${quality || 75}`
+}
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-5">
       <Head>
@@ -22,11 +25,12 @@ export default function Home() {
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
                   <Image
-            src={logo}
-            alt="Givotia logo"
-            width={400}
-            height={400} 
-            />
+      loader={myLoader}
+      src="img/logo-full.png"
+      alt="Picture of the author"
+      width={500}
+      height={500}
+    />
         </div>
       </main>
 
